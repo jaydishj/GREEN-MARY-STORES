@@ -87,7 +87,7 @@ elif st.session_state.page == "store":
 
     Our store proudly offers **eco-friendly, organic, and herbal products** crafted with care and scientific expertise by our Botany students. 🌿 
     """)
-    st.image("c:/Users/Admin/Downloads/IMG-20250815-WA0020.jpg", caption="Department of Botany", use_container_width=False)
+    st.image("2.jpg", caption="Department of Botany", use_container_width=False)
 
     st.markdown("""
     ✨ **Why Choose Us?**  
@@ -124,12 +124,12 @@ elif st.session_state.page == "store":
 elif st.session_state.page == "products":
     st.header("🛒 Products")
     products = [
-        {"name": "Dry amla", "price": 100, "image": "c:/Users/Admin/Downloads/IMG-20250815-WA0022.jpg"},
-        {"name": "Ragi powder", "price": 100, "image": "c:/Users/Admin/Downloads/IMG-20250815-WA0021.jpg"},
-        {"name": "Masala tea powder", "price": 100, "image": "c:/Users/Admin/Downloads/IMG-20250815-WA0018.jpg"},
-        {"name": "Herbal hair growth oil", "price": 80, "image": "c:/Users/Admin/Downloads/IMG-20250815-WA0023.jpg"},
-        {"name": "Face pack powder", "price": 100, "image": "c:/Users/Admin/Downloads/IMG-20250815-WA0025.jpg"},
-        {"name": "Rose petal jam", "price": 85, "image": "c:/Users/Admin/Downloads/IMG-20250815-WA0019.jpg"}
+        {"name": "Dry amla", "price": 100, "image": "AMLA.jpg"},
+        {"name": "Ragi powder", "price": 100, "image": "RAGI.jpg"},
+        {"name": "Masala tea powder", "price": 100, "image": "MASALA.jpg"},
+        {"name": "Herbal hair growth oil", "price": 80, "image": "HERBAL.jpg"},
+        {"name": "Face pack powder", "price": 100, "image": "FACEPACK.jpg"},
+        {"name": "Rose petal jam", "price": 85, "image": "ROSE.jpg"}
     ]
     for p in products:
         st.image(p["image"], width=150)
