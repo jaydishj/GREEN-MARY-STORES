@@ -58,7 +58,7 @@ if "admin_logged" not in st.session_state:
 
 # ---- LOGIN PAGE ----
 if st.session_state.page == "login":
-    st.image("c:/Users/Admin/Downloads/mary matha.jpg", width=180)
+    st.image("https://github.com/jaydishj/GREEN-MARY-STORES/blob/main/LOGO.jpg", width=180)
     st.title("🌱 Welcome to Green Mary Store")
     st_lottie(login_anim, height=200)
 
