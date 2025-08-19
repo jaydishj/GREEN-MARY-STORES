@@ -79,7 +79,7 @@ if st.session_state.page == "login":
 
 # ---- STORE PAGE ----
 elif st.session_state.page == "store":
-    st.image("1(2).jpg", caption="🌾 Welcome to Green Mary Stores", use_container_width=True)
+    st.image("first.jpg", caption="🌾 Welcome to Green Mary Stores", use_container_width=True)
 
     st.markdown("""
     Welcome to **GREEN MARY STORES** 🌱  
@@ -87,7 +87,7 @@ elif st.session_state.page == "store":
 
     Our store proudly offers **eco-friendly, organic, and herbal products** crafted with care and scientific expertise by our Botany students. 🌿 
     """)
-    st.image("2.jpg", caption="Department of Botany", use_container_width=False)
+    st.image("second.jpg", caption="Department of Botany", use_container_width=False)
 
     st.markdown("""
     ✨ **Why Choose Us?**  
@@ -101,7 +101,7 @@ elif st.session_state.page == "store":
 
     col1, col2 = st.columns([1, 2])
     with col1:
-        st.image("3(2).jpg", use_container_width=True)
+        st.image("third.jpg", use_container_width=True)
     with col2:
         st.write("""
         🌱 **Our Promise:**  
@@ -113,7 +113,7 @@ elif st.session_state.page == "store":
     To bring nature closer to people by providing sustainable herbal solutions while empowering students and farmers.  
     """)
 
-    st.image("4.jpg", caption="🌾 Freshness Guaranteed", use_container_width=True)
+    st.image("fourth.jpg", caption="🌾 Freshness Guaranteed", use_container_width=True)
     st_lottie(store_anim, height=250)
 
     if st.button("View Products"):
