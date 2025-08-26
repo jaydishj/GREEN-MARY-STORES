@@ -5,6 +5,31 @@ from PIL import Image
 import pandas as pd
 import sqlite3
 
+
+page_bg = """
+<style>
+.stApp {
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Optional: Make product cards transparent */
+.css-1d391kg, .css-12oz5g7, .stCard {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border-radius: 15px;
+    padding: 15px;
+}
+</style>
+"""
+st.markdown(page_bg, unsafe_allow_html=True)
+
 # ------------------ DB SETUP ------------------
 def init_db():
     conn = sqlite3.connect("orders.db")
