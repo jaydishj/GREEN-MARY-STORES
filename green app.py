@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 from streamlit_lottie import st_lottie
 import requests
 from PIL import Image
@@ -6,31 +7,144 @@ import pandas as pd
 import sqlite3
 
 
-st.set_page_config(page_title="Green Mary Store", layout="wide")
+# Inject custom frontend
+html_code = """ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Green Mary Store</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+    }
 
-# ---------- LIVE BACKGROUND (Gradient Animation) ----------
-page_bg = """
-<style>
-[data-testid="stAppViewContainer"] {
-    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-}
+    /* Animated gradient background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(-45deg, #8B0000, #B22222, #FFD700, #8B0000);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      z-index: -1;
+    }
 
-@keyframes gradientBG {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-}
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
 
-/* Optional: Sidebar background */
-[data-testid="stSidebar"] {
-    background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-}
-</style>
+    /* Header */
+    header {
+      text-align: center;
+      padding: 30px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #FFD700;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    /* Product grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* Product card */
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 2px solid #FFD700;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #FFD700;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #FFD700;
+      margin: 10px 0;
+    }
+
+    .card p {
+      margin: 5px 0;
+      font-size: 1.1rem;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(45deg, #FFD700, #FFB800);
+      color: #8B0000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .buy-btn:hover {
+      background: linear-gradient(45deg, #FFCC33, #FFD700);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>🌹 Welcome to Green Mary Store 🌹</header>
+  <section class="products">
+    <div class="card">
+      <img src="https://via.placeholder.com/150" alt="Dry Amla">
+      <h3>Dry Amla</h3>
+      <p>₹100</p>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/150" alt="Ragi Powder">
+      <h3>Ragi Powder</h3>
+      <p>₹120</p>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/150" alt="Masala Tea">
+      <h3>Masala Tea</h3>
+      <p>₹150</p>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+  </section>
+</body>
+</html>
 """
-st.markdown(page_bg, unsafe_allow_html=True)
+
+# Render it
+components.html(html_code, height=900, scrolling=True)
+
 
 # ------------------ DB SETUP ------------------
 def init_db():
