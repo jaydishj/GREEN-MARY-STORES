@@ -151,17 +151,17 @@ html_code = """
 <body>
   <!-- Header Section -->
   <header>
-    <img src="LOGO.jpg" class="logo" alt="Logo">
+    <img src="https://images.unsplash.com/photo-XXX" class="logo" alt="Our Lady of Fatima">
     <h1>SMC STORES</h1>
     <p>BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)</p>
 
     <!-- Student Images -->
     <div class="students">
-      <img src="IMG-20250815-WA0024(1).jpg" alt="Student 1">
-      <img src="IMG-20250815-WA0030(1).jpg" alt="Student 2">
-      <img src="IMG-20250815-WA0027(1).jpg" alt="Student 3">
-      <img src="IMG-20250815-WA0028(1).jpg" alt="Student 4">
-      <img src="IMG-20250815-WA0029(1).jpg" alt="Student 5">
+      <img src="https://i.pravatar.cc/150?img=1" alt="Student 1">
+      <img src="https://i.pravatar.cc/150?img=2" alt="Student 2">
+      <img src="https://i.pravatar.cc/150?img=3" alt="Student 3">
+      <img src="https://i.pravatar.cc/150?img=4" alt="Student 4">
+      <img src="https://i.pravatar.cc/150?img=5" alt="Student 5">
     </div>
   </header>
 
