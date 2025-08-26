@@ -157,11 +157,11 @@ html_code = """
 
     <!-- Student Images -->
     <div class="students">
-      <img src="https://via.placeholder.com/70" alt="Student 1">
-      <img src="https://via.placeholder.com/70" alt="Student 2">
-      <img src="https://via.placeholder.com/70" alt="Student 3">
-      <img src="https://via.placeholder.com/70" alt="Student 4">
-      <img src="https://via.placeholder.com/70" alt="Student 5">
+      <img src="IMG-20250815-WA0024(1).jpg" alt="Student 1">
+      <img src="IMG-20250815-WA0030(1).jpg" alt="Student 2">
+      <img src="IMG-20250815-WA0027(1).jpg" alt="Student 3">
+      <img src="IMG-20250815-WA0028(1).jpg" alt="Student 4">
+      <img src="IMG-20250815-WA0029(1).jpg" alt="Student 5">
     </div>
   </header>
 
