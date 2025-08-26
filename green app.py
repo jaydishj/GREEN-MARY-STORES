@@ -8,139 +8,198 @@ import sqlite3
 
 
 # Inject custom frontend
-html_code = """ 
+html_code = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Green Mary Store</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-    }
+<meta charset="UTF-8">
+<title>Green Mary Store</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    background: #fdfdfd;
+  }
 
-    /* Animated gradient background */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(-45deg, #8B0000, #B22222, #FFD700, #8B0000);
-      background-size: 400% 400%;
-      animation: gradientBG 12s ease infinite;
-      z-index: -1;
-    }
+  /* Floating flowers background */
+  .flower {
+    position: fixed;
+    top: -100px;
+    width: 50px;
+    height: 50px;
+    background-image: url('https://png.pngtree.com/png-vector/20230310/ourmid/pngtree-hand-painted-pink-flower-png-image_6649407.png');
+    background-size: cover;
+    animation: fall linear infinite;
+    z-index: -1;
+    opacity: 0.8;
+  }
+  @keyframes fall {
+    0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
 
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
+  /* Header */
+  header {
+    text-align: center;
+    padding: 30px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #6a1b9a;
+  }
 
-    /* Header */
-    header {
-      text-align: center;
-      padding: 30px;
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #FFD700;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-    }
+  /* Product grid */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
 
-    /* Product grid */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+  /* Product card */
+  .card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    cursor: pointer;
+  }
 
-    /* Product card */
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      padding: 20px;
-      text-align: center;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 2px solid #FFD700;
-    }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  }
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
+  .card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
 
-    .card img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 2px solid #FFD700;
-      margin-bottom: 15px;
-    }
+  .card h3 {
+    color: #6a1b9a;
+    margin: 10px 0;
+  }
 
-    .card h3 {
-      color: #FFD700;
-      margin: 10px 0;
-    }
+  .card p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+  }
 
-    .card p {
-      margin: 5px 0;
-      font-size: 1.1rem;
-    }
-
-    .buy-btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 18px;
-      border: none;
-      border-radius: 25px;
-      background: linear-gradient(45deg, #FFD700, #FFB800);
-      color: #8B0000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .buy-btn:hover {
-      background: linear-gradient(45deg, #FFCC33, #FFD700);
-      transform: scale(1.05);
-    }
-  </style>
+  /* Sign-in Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+  }
+  .modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  .modal-content h2 {
+    margin-bottom: 15px;
+    color: #6a1b9a;
+  }
+  .modal-content input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  .modal-content button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #6a1b9a;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    color: #aaa;
+  }
+  .close:hover {
+    color: #000;
+  }
+</style>
 </head>
 <body>
-  <header>🌹 Welcome to Green Mary Store 🌹</header>
+  <!-- Floating flowers -->
+  <div class="flower" style="left:10%; animation-duration:12s;"></div>
+  <div class="flower" style="left:30%; animation-duration:15s;"></div>
+  <div class="flower" style="left:50%; animation-duration:10s;"></div>
+  <div class="flower" style="left:70%; animation-duration:14s;"></div>
+  <div class="flower" style="left:90%; animation-duration:11s;"></div>
+
+  <!-- Header -->
+  <header>🌸 Welcome to Green Mary Store 🌸</header>
+
+  <!-- Products -->
   <section class="products">
-    <div class="card">
+    <div class="card" onclick="openModal()">
       <img src="https://via.placeholder.com/150" alt="Dry Amla">
       <h3>Dry Amla</h3>
       <p>₹100</p>
-      <button class="buy-btn">Buy Now</button>
     </div>
-    <div class="card">
+    <div class="card" onclick="openModal()">
       <img src="https://via.placeholder.com/150" alt="Ragi Powder">
       <h3>Ragi Powder</h3>
       <p>₹120</p>
-      <button class="buy-btn">Buy Now</button>
     </div>
-    <div class="card">
+    <div class="card" onclick="openModal()">
       <img src="https://via.placeholder.com/150" alt="Masala Tea">
       <h3>Masala Tea</h3>
       <p>₹150</p>
-      <button class="buy-btn">Buy Now</button>
     </div>
   </section>
+
+  <!-- Sign-in Modal -->
+  <div id="signinModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Sign In</h2>
+      <input type="text" placeholder="Email">
+      <input type="password" placeholder="Password">
+      <button onclick="alert('Signed in!')">Sign In</button>
+    </div>
+  </div>
+
+<script>
+function openModal() {
+  document.getElementById("signinModal").style.display = "block";
+}
+function closeModal() {
+  document.getElementById("signinModal").style.display = "none";
+}
+</script>
 </body>
 </html>
 """
+
+components.html(html_code, height=1000, scrolling=True)
 
 # Render it
 components.html(html_code, height=900, scrolling=True)
