@@ -6,9 +6,12 @@ import pandas as pd
 import sqlite3
 
 
+st.set_page_config(page_title="Green Mary Store", layout="wide")
+
+# ---------- LIVE BACKGROUND (Gradient Animation) ----------
 page_bg = """
 <style>
-.stApp {
+[data-testid="stAppViewContainer"] {
     background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
@@ -20,11 +23,10 @@ page_bg = """
     100% {background-position: 0% 50%;}
 }
 
-/* Optional: Make product cards transparent */
-.css-1d391kg, .css-12oz5g7, .stCard {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-    border-radius: 15px;
-    padding: 15px;
+/* Optional: Sidebar background */
+[data-testid="stSidebar"] {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
 }
 </style>
 """
