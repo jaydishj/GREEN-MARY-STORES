@@ -287,27 +287,27 @@ elif st.session_state.page == "products":
         {
             "name": "Ragi powder",
             "price": 100,
-            "images": ["RAGI.jpg", "IMG-20250815-WA0026-1.jpg"]
+            "images": ["RAGI.jpg", "TWO.jpg"]
         },
         {
             "name": "Masala tea powder",
             "price": 100,
-            "images": ["MASALA.jpg", "IMG-20250815-WA0029-1.jpg"]
+            "images": ["MASALA.jpg", "THREE.jpg"]
         },
         {
             "name": "Herbal hair growth oil",
             "price": 80,
-            "images": ["HERBAL.jpg", "IMG-20250815-WA0028-1.jpg"]
+            "images": ["HERBAL.jpg", "FOUR.jpg"]
         },
         {
             "name": "Face pack powder",
             "price": 100,
-            "images": ["FACEPACK.jpg", "IMG-20250815-WA0030-1.jpg"]
+            "images": ["FACEPACK.jpg", "FIVE.jpg"]
         },
         {
             "name": "Rose petal jam",
             "price": 85,
-            "images": ["ROSE.jpg", "IMG-20250815-WA0024-1.jpg"]
+            "images": ["ROSE.jpg", "SIX.jpg"]
         }
     ]
 
