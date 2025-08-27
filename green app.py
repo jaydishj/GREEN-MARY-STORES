@@ -307,7 +307,7 @@ products = [
     }
 ]
 
-    for p in products:
+  for p in products:
         st.subheader(f"{p['name']} - ₹{p['price']}")
     
     # Show all images for that product
