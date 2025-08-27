@@ -309,7 +309,7 @@ elif st.session_state.page == "products":
     }
 ]
     for p in products:
-    st.subheader(f"{p['name']} - ₹{p['price']}")
+        st.subheader(f"{p['name']} - ₹{p['price']}")
     
     # Show all images for that product
     for img in p["images"]:
