@@ -168,19 +168,19 @@ html_code = """
   <!-- Products Section -->
   <section class="products">
     <div class="card">
-      <img src="https://images.istockphoto.com/photos/dry-gooseberries-geeky-picture-idXXXXXXX" alt="Dry Amla">
+      <img src="https://share.google/images/3QTla3EviQnibFZvB" alt="Dry Amla">
       <h3>Dry Amla</h3>
       <p>₹100</p>
       <button class="buy-btn">Buy Now</button>
     </div>
     <div class="card">
-      <img src="https://rotimatic.com/blogs/food-health/ragi-flour-benefits" alt="Ragi Powder">
+      <img src="https://share.google/images/r3VJ0mOkXnXXpoc7o" alt="Ragi Powder">
       <h3>Ragi Powder</h3>
       <p>₹120</p>
       <button class="buy-btn">Buy Now</button>
     </div>
     <div class="card">
-      <img src="https://images.dreamstime.com/photos-images/tea-masala.html" alt="Masala Tea">
+      <img src="https://share.google/images/zQ3jn0bVjXqvcIOWN" alt="Masala Tea">
       <h3>Masala Tea</h3>
       <p>₹150</p>
       <button class="buy-btn">Buy Now</button>
