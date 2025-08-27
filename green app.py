@@ -282,7 +282,7 @@ elif st.session_state.page == "products":
         {
             "name": "Dry amla",
             "price": 100,
-            "images": ["AMLA.jpg", "IMG-20250815-WA0027-1.jpg"]
+            "images": ["AMLA.jpg", "ONE.jpg"]
         },
         {
             "name": "Ragi powder",
