@@ -8,6 +8,7 @@ import sqlite3
 
 
 # Inject custom frontend
+# Inject custom frontend
 html_code = """ 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,23 +68,6 @@ html_code = """
       margin-bottom: 20px;
     }
 
-    /* Row of student images */
-    .students {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
-    .students img {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #FFD700;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-
     /* Product grid */
     .products {
       display: grid;
@@ -110,62 +94,8 @@ html_code = """
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
-    .card img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 2px solid #FFD700;
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SMC STORES</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      color: #333;
-      text-align: center;
-    }
-
-    header {
-      padding: 20px;
-      background: linear-gradient(90deg, #FFD700, #FFB800);
-      color: #8B0000;
-    }
-
-    .logo {
-      width: 100px;
-      border-radius: 50%;
-    }
-
-    h1 {
-      margin: 10px 0;
-      font-size: 2rem;
-    }
-
-    .products {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 30px;
-      flex-wrap: wrap;
-    }
-
-    .card {
-      border: 1px solid #ddd;
-      border-radius: 15px;
-      padding: 20px;
-      width: 200px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
     .card h3 {
+      color: #FFD700;
       margin: 10px 0;
     }
 
@@ -221,6 +151,8 @@ html_code = """
   </section>
 </body>
 </html>
+"""
+components.html(html_code, height=1000, scrolling=True)
 
 
 # ------------------ DB SETUP ------------------
