@@ -275,9 +275,9 @@ elif st.session_state.page == "store":
 
 # ---- PRODUCTS PAGE ----
 # ---- PRODUCTS PAGE ----
+# ---- PRODUCTS PAGE ----
 elif st.session_state.page == "products":
     st.header("🛒 Products")
-
     products = [
         {
             "name": "Dry amla",
@@ -311,19 +311,20 @@ elif st.session_state.page == "products":
         }
     ]
 
-  for p in products:
-    st.subheader(f"{p['name']} - ₹{p['price']}")
+    for p in products:
+        st.subheader(f"{p['name']} - ₹{p['price']}")
 
-    # Show all images for that product
-    for img in p["images"]:
-        st.image(img, width=150)
+        # Show all images for that product
+        for img in p["images"]:
+            st.image(img, width=150)
 
-    if st.button(f"Add to Cart: {p['name']}"):
-        st.session_state.cart.append(p)
+        if st.button(f"Add to Cart: {p['name']}"):
+            st.session_state.cart.append(p)
 
-if st.button("View Cart"):
-    st.session_state.page = "cart"
-    st.rerun()
+    if st.button("View Cart"):
+        st.session_state.page = "cart"
+        st.rerun()
+
 
 # ---- CART PAGE ----
 elif st.session_state.page == "cart":
