@@ -8,7 +8,6 @@ import sqlite3
 
 
 # Inject custom frontend
-# Inject custom frontend
 html_code = """ 
 <!DOCTYPE html>
 <html lang="en">
@@ -148,11 +147,16 @@ html_code = """
       <p>₹150</p>
       <button class="buy-btn">Buy Now</button>
     </div>
+    <div class="card">
+      <h3>Herbal Hair Oil</h3>
+      <p>₹80</p>
+      <button class="buy-btn">Buy Now</button>
+    </div>
   </section>
 </body>
 </html>
 """
-components.html(html_code, height=1000, scrolling=True)
+components.html(html_code, height=1100, scrolling=True)
 
 
 # ------------------ DB SETUP ------------------
@@ -209,7 +213,7 @@ if "admin_logged" not in st.session_state:
 # ---- LOGIN PAGE ----
 if st.session_state.page == "login":
     st.image("LOGO.jpg", width=180)
-    st.title("🌱 Welcome to Green Mary Store")
+    st.title("🌱 Welcome to SMC STORES")
     st_lottie(login_anim, height=200)
 
     st.subheader("🔑 Sign In")
@@ -229,10 +233,10 @@ if st.session_state.page == "login":
 
 # ---- STORE PAGE ----
 elif st.session_state.page == "store":
-    st.image("first.jpg", caption="🌾 Welcome to Green Mary Stores", use_container_width=True)
+    st.image("first.jpg", caption="🌾 Welcome to SMC STORES", use_container_width=True)
 
     st.markdown("""
-    Welcome to **GREEN MARY STORES** 🌱  
+    Welcome to **SMC STORES** 🌱  
     An initiative by **St. Mary’s College (Autonomous), Thoothukudi – Department of Botany**.  
 
     Our store proudly offers **eco-friendly, organic, and herbal products** crafted with care and scientific expertise by our Botany students. 🌿 
