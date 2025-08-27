@@ -116,11 +116,56 @@ html_code = """
       object-fit: cover;
       border-radius: 10px;
       border: 2px solid #FFD700;
-      margin-bottom: 15px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMC STORES</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      background: linear-gradient(90deg, #FFD700, #FFB800);
+      color: #8B0000;
+    }
+
+    .logo {
+      width: 100px;
+      border-radius: 50%;
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 2rem;
+    }
+
+    .products {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .card h3 {
-      color: #FFD700;
       margin: 10px 0;
     }
 
@@ -154,43 +199,28 @@ html_code = """
     <img src="https://images.pexels.com/photos/13942394/pexels-photo-13942394.jpeg" class="logo" alt="Our Lady of Fatima">
     <h1>SMC STORES</h1>
     <p>BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)</p>
-
-    <!-- Student Images -->
-    <div class="students">
-      <img src="https://i.pravatar.cc/150?img=1" alt="Student 1">
-      <img src="https://i.pravatar.cc/150?img=2" alt="Student 2">
-      <img src="https://i.pravatar.cc/150?img=3" alt="Student 3">
-      <img src="https://i.pravatar.cc/150?img=4" alt="Student 4">
-      <img src="https://i.pravatar.cc/150?img=5" alt="Student 5">
-    </div>
   </header>
 
- <section class="products">
-  <div class="card">
-    <img src="https://images.pexels.com/photos/5946640/pexels-photo-5946640.jpeg" alt="Dry Amla">
-    <h3>Dry Amla</h3>
-    <p>₹100</p>
-    <button class="buy-btn">Buy Now</button>
-  </div>
-  <div class="card">
-    <img src="https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg" alt="Ragi Powder">
-    <h3>Ragi Powder</h3>
-    <p>₹120</p>
-    <button class="buy-btn">Buy Now</button>
-  </div>
-  <div class="card">
-    <img src="https://images.pexels.com/photos/4110250/pexels-photo-4110250.jpeg" alt="Masala Tea">
-    <h3>Masala Tea</h3>
-    <p>₹150</p>
-    <button class="buy-btn">Buy Now</button>
-  </div>
-</section>
+  <!-- Products Section -->
+  <section class="products">
+    <div class="card">
+      <h3>Dry Amla</h3>
+      <p>₹100</p>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="card">
+      <h3>Ragi Powder</h3>
+      <p>₹120</p>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="card">
+      <h3>Masala Tea</h3>
+      <p>₹150</p>
+      <button class="buy-btn">Buy Now</button>
+    </div>
   </section>
 </body>
 </html>
-"""
-
-components.html(html_code, height=1100, scrolling=True)
 
 
 # ------------------ DB SETUP ------------------
