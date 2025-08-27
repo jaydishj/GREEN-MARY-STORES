@@ -274,40 +274,39 @@ elif st.session_state.page == "store":
         st.rerun()
 
 # ---- PRODUCTS PAGE ----
-elif st.session_state.page == "products":
-    st.header("🛒 Products")
-    products = [
+products = [
     {
         "name": "Dry amla",
         "price": 100,
-        "images": ["AMLA.jpg", "IMG-20250815-WA0027(1).jpg"]
+        "images": ["AMLA.jpg", "IMG-20250815-WA0027-1.jpg"]
     },
     {
         "name": "Ragi powder",
         "price": 100,
-        "images": ["RAGI.jpg", "IMG-20250815-WA0026(1).jpg"]
+        "images": ["RAGI.jpg", "IMG-20250815-WA0026-1.jpg"]
     },
     {
         "name": "Masala tea powder",
         "price": 100,
-        "images": ["MASALA.jpg", "IMG-20250815-WA0029(1).jpg"]
+        "images": ["MASALA.jpg", "IMG-20250815-WA0029-1.jpg"]
     },
     {
         "name": "Herbal hair growth oil",
         "price": 80,
-        "images": ["HERBAL.jpg", "IMG-20250815-WA0028(1).jpg"]
+        "images": ["HERBAL.jpg", "IMG-20250815-WA0028-1.jpg"]
     },
     {
         "name": "Face pack powder",
         "price": 100,
-        "images": ["FACEPACK.jpg", "IMG-20250815-WA0030(1).jpg"]
+        "images": ["FACEPACK.jpg", "IMG-20250815-WA0030-1.jpg"]
     },
     {
         "name": "Rose petal jam",
         "price": 85,
-        "images": ["ROSE.jpg", "IMG-20250815-WA0024(1).jpg"]
+        "images": ["ROSE.jpg", "IMG-20250815-WA0024-1.jpg"]
     }
 ]
+
     for p in products:
         st.subheader(f"{p['name']} - ₹{p['price']}")
     
