@@ -212,7 +212,6 @@ if "admin_logged" not in st.session_state:
 
 # ---- LOGIN PAGE ----
 if st.session_state.page == "login":
-    st.image("LOGO.jpg", width=180)
     st.title("🌱 Welcome to SMC STORES")
     st_lottie(login_anim, height=200)
 
@@ -278,18 +277,47 @@ elif st.session_state.page == "store":
 elif st.session_state.page == "products":
     st.header("🛒 Products")
     products = [
-        {"name": "Dry amla", "price": 100, "image": "AMLA.jpg"},
-        {"name": "Ragi powder", "price": 100, "image": "RAGI.jpg"},
-        {"name": "Masala tea powder", "price": 100, "image": "MASALA.jpg"},
-        {"name": "Herbal hair growth oil", "price": 80, "image": "HERBAL.jpg"},
-        {"name": "Face pack powder", "price": 100, "image": "FACEPACK.jpg"},
-        {"name": "Rose petal jam", "price": 85, "image": "ROSE.jpg"}
-    ]
+    {
+        "name": "Dry amla",
+        "price": 100,
+        "images": ["AMLA.jpg", "IMG-20250815-WA0027(1).jpg"]
+    },
+    {
+        "name": "Ragi powder",
+        "price": 100,
+        "images": ["RAGI.jpg", "IMG-20250815-WA0026(1).jpg"]
+    },
+    {
+        "name": "Masala tea powder",
+        "price": 100,
+        "images": ["MASALA.jpg", "IMG-20250815-WA0029(1).jpg"]
+    },
+    {
+        "name": "Herbal hair growth oil",
+        "price": 80,
+        "images": ["HERBAL.jpg", "IMG-20250815-WA0028(1).jpg"]
+    },
+    {
+        "name": "Face pack powder",
+        "price": 100,
+        "images": ["FACEPACK.jpg", "IMG-20250815-WA0030(1).jpg"]
+    },
+    {
+        "name": "Rose petal jam",
+        "price": 85,
+        "images": ["ROSE.jpg", "IMG-20250815-WA0024(1).jpg"]
+    }
+]
     for p in products:
-        st.image(p["image"], width=150)
-        st.subheader(f"{p['name']} - ₹{p['price']}")
-        if st.button(f"Add to Cart: {p['name']}"):
-            st.session_state.cart.append(p)
+    st.subheader(f"{p['name']} - ₹{p['price']}")
+    
+    # Show all images for that product
+    for img in p["images"]:
+        st.image(img, width=150)
+    
+    if st.button(f"Add to Cart: {p['name']}"):
+        st.session_state.cart.append(p)
+
     if st.button("View Cart"):
         st.session_state.page = "cart"
         st.rerun()
