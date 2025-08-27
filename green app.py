@@ -165,26 +165,26 @@ html_code = """
     </div>
   </header>
 
-  <!-- Products Section -->
-  <section class="products">
-    <div class="card">
-      <img src="https://share.google/images/3QTla3EviQnibFZvB" alt="Dry Amla">
-      <h3>Dry Amla</h3>
-      <p>₹100</p>
-      <button class="buy-btn">Buy Now</button>
-    </div>
-    <div class="card">
-      <img src="https://share.google/images/r3VJ0mOkXnXXpoc7o" alt="Ragi Powder">
-      <h3>Ragi Powder</h3>
-      <p>₹120</p>
-      <button class="buy-btn">Buy Now</button>
-    </div>
-    <div class="card">
-      <img src="https://share.google/images/zQ3jn0bVjXqvcIOWN" alt="Masala Tea">
-      <h3>Masala Tea</h3>
-      <p>₹150</p>
-      <button class="buy-btn">Buy Now</button>
-    </div>
+ <section class="products">
+  <div class="card">
+    <img src="https://images.pexels.com/photos/5946640/pexels-photo-5946640.jpeg" alt="Dry Amla">
+    <h3>Dry Amla</h3>
+    <p>₹100</p>
+    <button class="buy-btn">Buy Now</button>
+  </div>
+  <div class="card">
+    <img src="https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg" alt="Ragi Powder">
+    <h3>Ragi Powder</h3>
+    <p>₹120</p>
+    <button class="buy-btn">Buy Now</button>
+  </div>
+  <div class="card">
+    <img src="https://images.pexels.com/photos/4110250/pexels-photo-4110250.jpeg" alt="Masala Tea">
+    <h3>Masala Tea</h3>
+    <p>₹150</p>
+    <button class="buy-btn">Buy Now</button>
+  </div>
+</section>
   </section>
 </body>
 </html>
