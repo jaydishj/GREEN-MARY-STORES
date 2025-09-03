@@ -354,15 +354,21 @@ elif st.session_state.page == "cart":
 elif st.session_state.page == "order":
     st.header("📦 Place Your Order")
     payment = st.radio("Choose Payment Method:", ["Cash on Delivery", "GPay"])
-    if payment == "GPay":
-        gpay = st.text_input("GPay number:", "12345678")
+
     Name = st.text_input("Enter your name:")
     address = st.text_area("Enter Delivery Address:")
     phone = st.text_input("Enter your phone number:")
     pincode = st.text_input("Enter your pincode")
+
     txn = ""
+    payment_screenshot = None  
+
     if payment == "GPay":
-        txn = st.text_input("Enter GPay Transaction ID:")
+        st.markdown("### 📱 Pay using GPay")
+        st.info("Send your payment to **GPay Number: 89407 39291**")
+
+        txn = st.text_input("Enter your GPay Transaction ID after payment:")
+        payment_screenshot = st.file_uploader("📷 Upload payment screenshot", type=["jpg", "jpeg", "png"])
 
     if st.button("Confirm Order"):
         order = {
@@ -372,14 +378,23 @@ elif st.session_state.page == "order":
             "pincode": pincode,
             "payment": payment,
             "transaction": txn if payment == "GPay" else "N/A",
-            "items": st.session_state.cart.copy()
+            "items": st.session_state.cart.copy(),
+            "screenshot": payment_screenshot.name if payment_screenshot else "N/A"
         }
 
-        save_order(order)   # ✅ Save to DB
+        # Save to DB (you might want to add screenshot column in DB if needed)
+        save_order(order)   
+
+        # If screenshot uploaded, save file locally
+        if payment_screenshot is not None:
+            with open(f"screenshots/{payment_screenshot.name}", "wb") as f:
+                f.write(payment_screenshot.getbuffer())
+
         st_lottie(success_anim, height=200)
         st.success("✅ Order placed successfully!")
         st.info("🌱 Quote: 'Agriculture is the backbone of our nation.'")
         st.session_state.cart.clear()
+
 
 # ---- ADMIN PAGE ----
 elif st.session_state.page == "admin":
@@ -391,11 +406,29 @@ elif st.session_state.page == "admin":
     else:
         st.success("Welcome Admin! Here are all the orders 👇")
         orders = load_orders()
+
         if not orders:
             st.info("No orders placed yet.")
         else:
-            df = pd.DataFrame(orders,columns=["Name","Address","Phone","Pincode","Payment","GPay Number","Transaction ID","Items"])
+            # ✅ Include Screenshot column
+            df = pd.DataFrame(
+                orders,
+                columns=["Name","Address","Phone","Pincode","Payment","GPay Number","Transaction ID","Items","Screenshot"]
+            )
             st.dataframe(df, use_container_width=True)
+
+            # ✅ Show screenshots (if any)
+            for i, order in enumerate(orders):
+                if order[-1] != "N/A":  # last column is Screenshot
+                    with open(f"screenshots/{order[-1]}", "rb") as f:
+                        img_bytes = f.read()
+                        st.download_button(
+                            label=f"⬇ Download Screenshot (Order {i+1})",
+                            data=img_bytes,
+                            file_name=order[-1],
+                            mime="image/png"
+                        )
+                        st.image(img_bytes, caption=f"Screenshot for Order {i+1}", width=300)
 
         if st.button("Logout"):
             st.session_state.admin_logged = False
