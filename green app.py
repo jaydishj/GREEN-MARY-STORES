@@ -220,7 +220,7 @@ if st.session_state.page == "login":
     password = st.text_input("Enter Password", type="password")
 
     if st.button("Sign In"):
-        if email == "admin " and password == "smctuty":
+        if email == "admin" and password == "smctuty":
             st.session_state.admin_logged = True
             st.session_state.page = "admin"
             st.rerun()
