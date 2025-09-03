@@ -7,7 +7,8 @@ import pandas as pd
 import sqlite3
 
 
-# Inject custom frontend
+
+# Full HTML + CSS in one string
 html_code = """ 
 <!DOCTYPE html>
 <html lang="en">
@@ -103,6 +104,7 @@ html_code = """
       font-size: 1.1rem;
     }
 
+    /* Buy button */
     .buy-btn {
       display: inline-block;
       margin-top: 10px;
@@ -124,15 +126,12 @@ html_code = """
 </head>
 <body>
 
-  st.markdown("""
-<header style="display:flex; align-items:center; gap:15px;">
-  <img src="APP.png" class="logo" alt="Our Lady of Fatima" width="100">
-  <div>
+  <!-- Header Section -->
+  <header>
+    <img src="APP.jpg" alt="Our Lady of Fatima" class="logo">
     <h1>SMC STORE</h1>
     <p>BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)</p>
-  </div>
-</header>
-""", unsafe_allow_html=True)
+  </header>
 
   <!-- Products Section -->
   <section class="products">
@@ -157,10 +156,14 @@ html_code = """
       <button class="buy-btn">Buy Now</button>
     </div>
   </section>
+
 </body>
 </html>
 """
-components.html(html_code, height=1100, scrolling=True)
+
+# Render in Streamlit
+components.html(html_code, height=1200, scrolling=True)
+
 
 
 # ------------------ DB SETUP ------------------
