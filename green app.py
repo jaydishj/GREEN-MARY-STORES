@@ -376,7 +376,22 @@ elif st.session_state.page == "order":
         st.info("Send your payment to **GPay Number: 89407 39291**")
 
         txn = st.text_input("Enter your GPay Transaction ID after payment:")
-        payment_screenshot = st.file_uploader("📷 Upload payment screenshot", type=["jpg", "jpeg", "png"])
+# File uploader for GPay screenshot
+        payment_screenshot = st.file_uploader("Upload GPay Payment Screenshot", type=["png", "jpg", "jpeg"])
+
+    if payment_screenshot is not None:
+    # Ensure a "screenshots" folder exists
+       os.makedirs("screenshots", exist_ok=True)
+
+    # Save the uploaded file temporarily
+       file_path = os.path.join("screenshots", payment_screenshot.name)
+    with open(file_path, "wb") as f:
+        f.write(payment_screenshot.getbuffer())
+
+    # Show uploaded screenshot
+    st.success("✅ Screenshot uploaded successfully!")
+    st.image(file_path, caption="Uploaded Payment Screenshot", use_container_width=True)
+
 
     if st.button("Confirm Order"):
         order = {
