@@ -125,7 +125,7 @@ html_code = """
 <body>
   <!-- Header Section -->
   <header>
-    <img src="APP.png" class="logo" alt="Our Lady of Fatima">
+    st.image("APP.png"),class="logo" alt="Our Lady of Fatima">
     <h1>SMC STORE</h1>
     <p>BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)</p>
   </header>
