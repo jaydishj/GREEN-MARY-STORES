@@ -126,7 +126,7 @@ html_code = """
   <!-- Header Section -->
   <header>
     <img src="APP.jpg" class="logo" alt="Our Lady of Fatima">
-    <h1>SMC STORES</h1>
+    <h1>SMC STORE</h1>
     <p>BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)</p>
   </header>
 
@@ -220,7 +220,7 @@ if st.session_state.page == "login":
     password = st.text_input("Enter Password", type="password")
 
     if st.button("Sign In"):
-        if email == "admin" and password == "6384052655":
+        if email == "admin " and password == "smctuty":
             st.session_state.admin_logged = True
             st.session_state.page = "admin"
             st.rerun()
@@ -235,11 +235,12 @@ elif st.session_state.page == "store":
     st.image("first.jpg", caption="🌾 Welcome to SMC STORES", use_container_width=True)
 
     st.markdown("""
-    Welcome to **SMC STORES** 🌱  
+    Welcome to **SMC STORE** 🌱  
     An initiative by **St. Mary’s College (Autonomous), Thoothukudi – Department of Botany**.  
 
     Our store proudly offers **eco-friendly, organic, and herbal products** crafted with care and scientific expertise by our Botany students. 🌿 
     """)
+    
     st.image("second.jpg", caption="Department of Botany", use_container_width=False)
 
     st.markdown("""
@@ -251,6 +252,15 @@ elif st.session_state.page == "store":
 
     Together, we aim to blend **traditional knowledge with modern science**, ensuring health, sustainability, and innovation for a greener tomorrow. 🌍💚  
     """)
+
+    st.markdown("""
+    ## 📞 Contact Info  
+    - **Dr. Sr. A. Arockia Jenecius Alphonse**  
+    - Head of the Department  
+    - St. Mary’s College (Autonomous), Thoothukudi, Tamil Nadu  
+    - Contact No: +91 89407 39291  
+    """)
+
 
     col1, col2 = st.columns([1, 2])
     with col1:
@@ -282,32 +292,32 @@ elif st.session_state.page == "products":
         {
             "name": "Dry amla",
             "price": 100,
-            "images": ["AMLA.jpg", "ONE.jpg"]
+            "images": [ "ONE.jpg"]
         },
         {
             "name": "Ragi powder",
             "price": 100,
-            "images": ["RAGI.jpg", "TWO.jpg"]
+            "images": ["TWO.jpg"]
         },
         {
             "name": "Masala tea powder",
             "price": 100,
-            "images": ["MASALA.jpg", "THREE.jpg"]
+            "images": [ "THREE.jpg"]
         },
         {
             "name": "Herbal hair growth oil",
             "price": 80,
-            "images": ["HERBAL.jpg", "FOUR.jpg"]
+            "images": [ "FOUR.jpg"]
         },
         {
             "name": "Face pack powder",
             "price": 100,
-            "images": ["FACEPACK.jpg", "FIVE.jpg"]
+            "images": ["FIVE.jpg"]
         },
         {
             "name": "Rose petal jam",
             "price": 85,
-            "images": ["ROSE.jpg", "SIX.jpg"]
+            "images": [ "SIX.jpg"]
         }
     ]
 
