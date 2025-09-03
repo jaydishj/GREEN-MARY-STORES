@@ -123,12 +123,16 @@ html_code = """
   </style>
 </head>
 <body>
-  <!-- Header Section -->
-  <header>
-    st.image("APP.png"),class="logo" alt="Our Lady of Fatima">
+
+  st.markdown("""
+<header style="display:flex; align-items:center; gap:15px;">
+  <img src="APP.png" class="logo" alt="Our Lady of Fatima" width="100">
+  <div>
     <h1>SMC STORE</h1>
     <p>BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)</p>
-  </header>
+  </div>
+</header>
+""", unsafe_allow_html=True)
 
   <!-- Products Section -->
   <section class="products">
