@@ -49,14 +49,11 @@ html_code = """
       padding: 30px 20px 15px;
     }
    header img.logo {
-  width: 80%;        
-  height: auto;      
-  border-radius: 12px; 
+  width: 120px;        
+  height: 120px;      
+  border-radius:50%; 
   border: 3px solid #FFD700; 
-  margin-bottom: 15px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto; 
+  margin-bottom: 15px; 
 
     }
     header h1 {
