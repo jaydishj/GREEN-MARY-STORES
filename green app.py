@@ -116,7 +116,9 @@ header p {
 <body>
 <!-- Header Section -->
 <header>
-    <img src =https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Our_Lady_of_Sorrows%2C_by_Juan_de_Ju%C3%AD%2C_1571.jpg/800px-Our_Lady_of_Sorrows%2C_by_Juan_de_Ju%C3%AD%2C_1571.jpg" alt="Our Lady of mary" class="logo">
+    <img src =https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Our_Lady_of_Sorrows%2C_by_Juan_de_Ju%C3%AD%2C_1571.jpg/800px-Our_Lady_of_Sorrows%2C_by_Juan_de_Ju%C3%AD%2C_1571.jpg"
+    alt="Our Lady of sorrows" 
+    class="logo">
     <h1>SMC STORE</h1>
     <p>BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)</p>
 </header>
