@@ -2,6 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 from streamlit_lottie import st_lottie
 import requests
+from PIL import Image
 import pandas as pd
 import sqlite3
 import os
@@ -115,10 +116,9 @@ header p {
 <body>
 <!-- Header Section -->
 <header>
-    <div style="position: relative; display: inline-block;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Our_Lady_of_Sorrows%2C_by_Juan_de_Ju%C3%AD%2C_1571.jpg/800px-Our_Lady_of_Sorrows%2C_by_Juan_de_Ju%C3%AD%2C_1571.jpg"
-             alt="Our Lady of Sorrows" 
-             class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Our_Lady_of_Sorrows%2C_by_Juan_de_Ju%C3%AD%2C_1571.jpg/800px-Our_Lady_of_Sorrows%2C_by_Juan_de_Ju%C3%AD%2C_1571.jpg"
+    alt="Our Lady of sorrows" 
+    class="logo">
     <h1>SMC STORE</h1>
     <p>BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)</p>
 </header>
@@ -145,16 +145,6 @@ header p {
         <button class="buy-btn">Buy Now</button>
     </div>
 </section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
-<script>
-var anim = lottie.loadAnimation({
-    container: document.getElementById('lottie-container'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: 'https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json'
-});
-</script>
 </body>
 </html>
 """
@@ -182,7 +172,7 @@ def save_order(order):
                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
               (order["name"], order["address"], order["phone"], order["pincode"],
                order["payment"], order.get("gpay_number"), order.get("transaction"),
-               order.get("items"), order.get("screenshot")))
+               str(order.get("items")), order.get("screenshot")))
     conn.commit()
     conn.close()
 
@@ -298,7 +288,6 @@ elif st.session_state.page == "order":
             st.image(file_path, caption="Uploaded Payment Screenshot", width=300)
 
     if st.button("Confirm Order"):
-        items_text = ", ".join([item["name"] for item in st.session_state.cart])
         order = {
             "name": Name,
             "address": address,
@@ -307,7 +296,7 @@ elif st.session_state.page == "order":
             "payment": payment,
             "transaction": txn if payment=="GPay" else "N/A",
             "screenshot": file_path if file_path else "N/A",
-            "items": items_text,
+            "items": st.session_state.cart.copy(),
             "gpay_number": "89407 39291" if payment=="GPay" else "N/A"
         }
         save_order(order)
