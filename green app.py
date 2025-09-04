@@ -223,9 +223,121 @@ if st.session_state.page == "login":
 # ---- STORE PAGE ----
 elif st.session_state.page == "store":
     st.image("first.jpg", caption="🌾 Welcome to SMC STORES", use_container_width=True)
+
+    st.markdown("""
+    Welcome to **SMC STORE** 🌱  
+    An initiative by **St. Mary’s College (Autonomous), Thoothukudi – Department of Botany**.  
+
+    Our store proudly offers **eco-friendly, organic, and herbal products** crafted with care and scientific expertise by our Botany students. 🌿 
+    """)
+    
+    st.image("second.jpg", caption="Department of Botany", use_container_width=False)
+
+    st.markdown("""
+    ✨ **Why Choose Us?**  
+    - 100% Natural and Sustainable Products 🍃  
+    - Promoting Student Innovation and Entrepreneurship 🎓  
+    - Supporting Local Farmers and Communities 👨‍🌾👩‍🌾  
+    - Quality assured through academic research and practice 🔬  
+
+    Together, we aim to blend **traditional knowledge with modern science**, ensuring health, sustainability, and innovation for a greener tomorrow. 🌍💚  
+    """)
+
+    st.markdown("""
+    ## 📞 Contact Info  
+    - **Dr. Sr. A. Arockia Jenecius Alphonse**  
+    - Head of the Department  
+    - St. Mary’s College (Autonomous), Thoothukudi, Tamil Nadu  
+    - Contact No: +91 89407 39291  
+    """)
+
+
+    col1, col2 = st.columns([1, 2])
+    with col1:
+        st.image("third.jpg", use_container_width=True)
+    with col2:
+        st.write("""
+        🌱 **Our Promise:**  
+        Every product is made with natural ingredients, ensuring **purity, freshness, and eco-friendliness**.  
+        """)
+
+    st.markdown("""
+    ## 🌿 Our Mission  
+    To bring nature closer to people by providing sustainable herbal solutions while empowering students and farmers.  
+    """)
+
+    st.image("fourth.jpg", caption="🌾 Freshness Guaranteed", use_container_width=True)
     st_lottie(store_anim, height=250)
+
     if st.button("View Products"):
         st.session_state.page = "products"
+        st.rerun()
+
+# ---- PRODUCTS PAGE ----
+# ---- PRODUCTS PAGE ----
+# ---- PRODUCTS PAGE ----
+elif st.session_state.page == "products":
+    st.header("🛒 Products")
+    products = [
+        {
+            "name": "Dry amla",
+            "price": 100,
+            "images": [ "ONE.jpg"]
+        },
+        {
+            "name": "Ragi powder",
+            "price": 100,
+            "images": ["TWO.jpg"]
+        },
+        {
+            "name": "Masala tea powder",
+            "price": 100,
+            "images": [ "THREE.jpg"]
+        },
+        {
+            "name": "Herbal hair growth oil",
+            "price": 80,
+            "images": [ "FOUR.jpg"]
+        },
+        {
+            "name": "Face pack powder",
+            "price": 100,
+            "images": ["FIVE.jpg"]
+        },
+        {
+            "name": "Rose petal jam",
+            "price": 85,
+            "images": [ "SIX.jpg"]
+        }
+    ]
+
+    for p in products:
+        st.subheader(f"{p['name']} - ₹{p['price']}")
+
+        # Show all images for that product
+        for img in p["images"]:
+            st.image(img, width=150)
+
+        if st.button(f"Add to Cart: {p['name']}"):
+            st.session_state.cart.append(p)
+
+    if st.button("View Cart"):
+        st.session_state.page = "cart"
+        st.rerun()
+
+
+# ---- CART PAGE ----
+elif st.session_state.page == "cart":
+    st.header("🛒 Your Cart")
+    if not st.session_state.cart:
+        st.warning("Cart is empty!")
+    else:
+        for item in st.session_state.cart:
+            st.write(f"✔️ {item['name']} - ₹{item['price']}")
+        total = sum([item["price"] for item in st.session_state.cart])
+        st.success(f"Total: ₹{total}")
+    if st.button("Place Order"):
+        st.session_state.page = "order"
         st.rerun()
 
 # ---- PRODUCTS PAGE ----
