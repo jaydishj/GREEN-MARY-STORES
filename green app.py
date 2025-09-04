@@ -116,7 +116,7 @@ header p {
 <body>
 <!-- Header Section -->
 <header>
-    <img src="APP.png" alt="Our Lady of Fatima" class="logo">
+    <img src= "APP.png" alt="Our Lady of Fatima" class="logo">
     <h1>SMC STORE</h1>
     <p>BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)</p>
 </header>
