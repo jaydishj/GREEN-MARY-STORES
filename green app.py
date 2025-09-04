@@ -369,34 +369,29 @@ elif st.session_state.page == "order":
     pincode = st.text_input("Enter your pincode")
 
     txn = ""
-    payment_screenshot = None  
+    file_path = None  # define file_path at the start
 
     if payment == "GPay":
         st.markdown("### 📱 Pay using GPay")
         st.info("Send your payment to **GPay Number: 89407 39291**")
 
         txn = st.text_input("Enter your GPay Transaction ID after payment:")
+
         # File uploader for GPay screenshot
         payment_screenshot = st.file_uploader("Upload GPay Payment Screenshot", type=["png", "jpg", "jpeg"])
 
         if payment_screenshot is not None:
-            # Ensure a "screenshots" folder exists
+            import os
             os.makedirs("screenshots", exist_ok=True)
-
-            # Save the uploaded file temporarily
             file_path = os.path.join("screenshots", payment_screenshot.name)
+
             with open(file_path, "wb") as f:
                 f.write(payment_screenshot.getbuffer())
 
             st.success("✅ Screenshot uploaded successfully!")
-            st.image(file_path, caption="Uploaded Payment Screenshot", use_container_width=True)
+            st.image(file_path, caption="Uploaded Payment Screenshot", width=300)
 
-
-    # Show uploaded screenshot
-    st.success("✅ Screenshot uploaded successfully!")
-    st.image(file_path, caption="Uploaded Payment Screenshot", use_container_width=True)
-
-
+    # Confirm Order Button
     if st.button("Confirm Order"):
         order = {
             "name": Name,
@@ -405,22 +400,16 @@ elif st.session_state.page == "order":
             "pincode": pincode,
             "payment": payment,
             "transaction": txn if payment == "GPay" else "N/A",
-            "items": st.session_state.cart.copy(),
-            "screenshot": payment_screenshot.name if payment_screenshot else "N/A"
+            "screenshot": file_path if file_path else "N/A",  # save screenshot path
+            "items": st.session_state.cart.copy()
         }
 
-        # Save to DB (you might want to add screenshot column in DB if needed)
-        save_order(order)   
-
-        # If screenshot uploaded, save file locally
-        if payment_screenshot is not None:
-            with open(f"screenshots/{payment_screenshot.name}", "wb") as f:
-                f.write(payment_screenshot.getbuffer())
-
+        save_order(order)   # ✅ Save to DB
         st_lottie(success_anim, height=200)
         st.success("✅ Order placed successfully!")
         st.info("🌱 Quote: 'Agriculture is the backbone of our nation.'")
         st.session_state.cart.clear()
+
 
 
 # ---- ADMIN PAGE ----
