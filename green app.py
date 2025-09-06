@@ -10,9 +10,9 @@ import os
 
 
 
-col1, col2, col3 = st.columns([1, 2, 1])
+col1, col2, col4,col5 = st.columns([1, 2, 1])
 
-with col2:  # Center column
+with col4:  # Center column
     st.image("LOGO.jpg", caption="Our Lady of Sorrows", width=120)
 # ------------------ HTML + CSS ------------------
 html_code = """
