@@ -7,10 +7,50 @@ import pandas as pd
 import sqlite3
 import os
 
+import streamlit as st
+
+# Custom CSS for header alignment
+st.markdown("""
+    <style>
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;  /* use flex-start for left alignment */
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .header-container img {
+        width: 120px;
+        border-radius: 10px;
+    }
+    .header-text {
+        text-align: left;
+    }
+    .header-text h1 {
+        color: gold;
+        margin: 0;
+    }
+    .header-text p {
+        color: white;
+        margin: 0;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Header with logo + text
+st.markdown(f"""
+    <div class="header-container">
+        <img src="MARY.jpg" alt="Our Lady of Sorrows">
+        <div class="header-text">
+            <h1>SMC STORE</h1>
+            <p>BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)</p>
+        </div>
+    </div>
+""", unsafe_allow_html=True)
 
 
 
-st.image("MARY.jpg", caption="Our Lady of Sorrows", width=120)
+
 
 
 # ------------------ HTML + CSS ------------------
