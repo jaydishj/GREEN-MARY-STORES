@@ -60,16 +60,6 @@ header {
   color: white;
 }
 
-header 
-.logo {
-  width: 120px;
-  height: auto;
-  margin-bottom: 10px;
-  display: block;
-  object-fit: contain;
-}
-
-
 
 header h1 {
     font-size: 2.5rem;
@@ -136,9 +126,6 @@ header p {
 <body>
 <!-- Header Section -->
 <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Our_Lady_of_Sorrows%2C_by_Juan_de_Ju%C3%AD%2C_1571.jpg"
-     alt="Our Lady of Sorrows" 
-     class="logo">
     <h1>SMC STORE</h1>
     <p>BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)</p>
 </header>
