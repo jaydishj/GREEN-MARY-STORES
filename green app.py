@@ -8,13 +8,11 @@ import sqlite3
 import os
 
 
-import streamlit as st
-
 # Create 2 equal columns
 col1, col2 = st.columns(2)
 
 with col1:
-    st.image("LOGO.jpg", caption="SMC COLLEGE", width=120)
+    st.image("images.png", caption="SMC COLLEGE", width=120)
 
 with col2:
     st.image("MARY.jpg", caption="OUR LADY OF SORROWS", width=120)
