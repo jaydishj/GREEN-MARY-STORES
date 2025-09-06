@@ -50,12 +50,15 @@ header {
   color: white;
 }
 
-header .logo {
-  width: 120px;   /* adjust size */
+header 
+.logo {
+  width: 120px;
   height: auto;
   margin-bottom: 10px;
   display: block;
+  object-fit: contain;
 }
+
 
 
 header h1 {
