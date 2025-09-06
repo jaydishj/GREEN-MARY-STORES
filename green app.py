@@ -10,7 +10,7 @@ import os
 
 col1, col2, col3, col4 = st.columns([1, 2, 2, 1])  # 4 columns
 
-with col3:  # Pick one column to center
+with col2:  # Pick one column to center
     st.image("MARY.jpg", caption="Our Lady of Sorrows", width=120)
 
 # ------------------ HTML + CSS ------------------
