@@ -10,7 +10,7 @@ import os
 
 
 
-st.image("https://upload.wikimedia.org/wikipedia/commons/4/4e/Our_Lady_of_Sorrows%2C_by_Juan_de_Ju%C3%AD%2C_1571.jpg", caption="Our Lady of Sorrows", width=120)
+st.image("MARY.jpg", caption="Our Lady of Sorrows", width=120)
 
 
 # ------------------ HTML + CSS ------------------
