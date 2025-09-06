@@ -41,21 +41,22 @@ body::before {
 }
 /* Header */
 header {
-  text-align: center;
+  display: flex;
+  flex-direction: column;  /* stack logo + text vertically */
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   background: linear-gradient(45deg, #f9a825, #ef6c00);
   color: white;
 }
 
 header .logo {
-  width: 80px;   /* Adjust size */
+  width: 120px;   /* adjust size */
   height: auto;
-  border-radius: 50%;  /* Optional: make it circular */
   margin-bottom: 10px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
+
 
 header h1 {
     font-size: 2.5rem;
@@ -122,9 +123,9 @@ header p {
 <body>
 <!-- Header Section -->
 <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Our_Lady_of_Sorrows%2C_by_Juan_de_Ju%C3%AD%2C_1571.jpg/200px-Our_Lady_of_Sorrows%2C_by_Juan_de_Ju%C3%AD%2C_1571.jpg"
-    alt="Our Lady of Sorrows" 
-    class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Our_Lady_of_Sorrows%2C_by_Juan_de_Ju%C3%AD%2C_1571.jpg"
+         alt="Our Lady of Sorrows" 
+         class="logo">
     <h1>SMC STORE</h1>
     <p>BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)</p>
 </header>
