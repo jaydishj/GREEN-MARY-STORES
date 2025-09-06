@@ -41,16 +41,22 @@ body::before {
 }
 /* Header */
 header {
-    text-align: center;
-    padding: 30px 20px 15px;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(45deg, #f9a825, #ef6c00);
+  color: white;
 }
-header img.logo {
-    width: 120px;
-    height: 120px;
-    border-radius:50%;
-    border: 3px solid #FFD700;
-    margin-bottom: 15px;
+
+header .logo {
+  width: 80px;   /* Adjust size */
+  height: auto;
+  border-radius: 50%;  /* Optional: make it circular */
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 header h1 {
     font-size: 2.5rem;
     font-weight: bold;
