@@ -8,12 +8,11 @@ import sqlite3
 import os
 
 
+col1, col2, col3, col4 = st.columns([1, 2, 2, 1])  # 4 columns
 
-
-col1, col2, col4,col5 = st.columns([1, 2, 1])
-
-with col4:  # Center column
+with col3:  # Pick one column to center
     st.image("LOGO.jpg", caption="Our Lady of Sorrows", width=120)
+
 # ------------------ HTML + CSS ------------------
 html_code = """
 <!DOCTYPE html>
