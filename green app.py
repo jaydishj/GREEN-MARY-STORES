@@ -7,6 +7,13 @@ import pandas as pd
 import sqlite3
 import os
 
+
+
+
+st.image("LOGO.jpg", caption="Our Lady of Sorrows", width=120)
+st.markdown("<h1 style='color:gold;'>SMC STORE</h1>", unsafe_allow_html=True)
+st.write("BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)")
+
 # ------------------ HTML + CSS ------------------
 html_code = """
 <!DOCTYPE html>
