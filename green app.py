@@ -10,7 +10,7 @@ import os
 
 
 
-st.image("LOGO.jpg", caption="Our Lady of Sorrows", width=120)
+st.image("https://upload.wikimedia.org/wikipedia/commons/4/4e/Our_Lady_of_Sorrows%2C_by_Juan_de_Ju%C3%AD%2C_1571.jpg", caption="Our Lady of Sorrows", width=120)
 st.markdown("<h1 style='color:gold;'>SMC STORE</h1>", unsafe_allow_html=True)
 st.write("BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)")
 
