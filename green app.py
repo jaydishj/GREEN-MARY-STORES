@@ -22,6 +22,7 @@ page_bg = """
 }
 </style>
 """
+st.markdown(page_bg, unsafe_allow_html=True)
 # Create 2 equal columns
 col1, col2, col3, col4 = st.columns([1,2,2,1])
 
