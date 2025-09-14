@@ -7,18 +7,14 @@ import pandas as pd
 import sqlite3
 import os
 
+import streamlit as st
+
 page_bg = """
 <style>
 [data-testid="stAppViewContainer"] {
-    background: linear-gradient(270deg, #FFD700, #FFA500, #FFD700);
-    background-size: 600% 600%;
-    animation: goldAnimation 15s ease infinite;
-}
-
-@keyframes goldAnimation {
-    0% {background-position:0% 50%}
-    50% {background-position:100% 50%}
-    100% {background-position:0% 50%}
+    background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+    background-size: auto;
+    background-color: #FFD700; /* golden base */
 }
 
 [data-testid="stHeader"] {
@@ -26,7 +22,7 @@ page_bg = """
 }
 
 [data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #FFF8DC, #FFD700);
+    background-color: #FFF8DC; /* light golden for sidebar */
 }
 </style>
 """
