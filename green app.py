@@ -255,11 +255,11 @@ elif st.session_state.page == "store":
 
     st.markdown("""
     ## 📞 Contact Info  
-    - **Dr. Sr. A. Arockia Jenecius Alphonse**  
-    - Head 
-    - Department of Botany  
-    - St. Mary’s College (Autonomous), Thoothukudi, Tamil Nadu  
-    - Contact No: +91 89407 39291  
+    **Dr. Sr. A. Arockia Jenecius Alphonse**  
+    Head  
+    Department of Botany  
+    St. Mary’s College (Autonomous), Thoothukudi, Tamil Nadu  
+    Contact No: +91 89407 39291  
     """)
 
 
