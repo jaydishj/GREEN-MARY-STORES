@@ -7,7 +7,21 @@ import pandas as pd
 import sqlite3
 import os
 
+page_bg = """
+<style>
+[data-testid="stAppViewContainer"] {
+    background-color: #f0f8ff; /* light blue background */
+}
 
+[data-testid="stHeader"] {
+    background-color: rgba(0,0,0,0); /* remove top header background */
+}
+
+[data-testid="stSidebar"] {
+    background-color: #e6ffe6; /* light green sidebar */
+}
+</style>
+"""
 # Create 2 equal columns
 col1, col2, col3, col4 = st.columns([1,2,2,1])
 
