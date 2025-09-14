@@ -267,9 +267,8 @@ elif st.session_state.page == "store":
         st.image("third.jpg", use_container_width=True)
    
     st.markdown("""
-    ##🌱 Our Promise 🌱 
-    
-    Every product is made with natural ingredients, ensuring **purity, freshness, and eco-friendliness**.  
+    🌱 Our Promise 🌱 
+    Every product is made with natural ingredients, ensuring **purity, freshness, and eco-friendliness.  
     """)
 
     st.markdown("""
