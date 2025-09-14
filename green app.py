@@ -214,7 +214,7 @@ if "admin_logged" not in st.session_state: st.session_state.admin_logged = False
 
 # ---- LOGIN PAGE ----
 if st.session_state.page == "login":
-    st.title("🌱 Welcome to SMC STORES🌱")
+    st.title("🌱 Welcome to SMC STORE🌱")
     st_lottie(login_anim, height=200)
     st.subheader("🔑 Sign In")
     email = st.text_input("Enter Email")
@@ -256,7 +256,8 @@ elif st.session_state.page == "store":
     st.markdown("""
     ## 📞 Contact Info  
     - **Dr. Sr. A. Arockia Jenecius Alphonse**  
-    - Head of the Department  
+    - Head 
+    - Department of Botany  
     - St. Mary’s College (Autonomous), Thoothukudi, Tamil Nadu  
     - Contact No: +91 89407 39291  
     """)
