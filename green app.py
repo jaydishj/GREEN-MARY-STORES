@@ -127,7 +127,9 @@ header p {
 <!-- Header Section -->
 <header>
     <h1>SMC STORE</h1>
-    <p>BY DEPT OF BOTANY, ST. MARY'S COLLEGE (TUTICORIN)</p>
+    <p>BY</p>
+    <p>DEPARTMENT OF BOTANY,</p> 
+    <p>ST. MARY'S COLLEGE (TUTICORIN)</p>
 </header>
 
 <!-- Products Section -->
@@ -212,7 +214,7 @@ if "admin_logged" not in st.session_state: st.session_state.admin_logged = False
 
 # ---- LOGIN PAGE ----
 if st.session_state.page == "login":
-    st.title("🌱 Welcome to SMC STORES")
+    st.title("🌱 Welcome to SMC STORES🌱")
     st_lottie(login_anim, height=200)
     st.subheader("🔑 Sign In")
     email = st.text_input("Enter Email")
@@ -230,10 +232,10 @@ if st.session_state.page == "login":
 
 # ---- STORE PAGE ----
 elif st.session_state.page == "store":
-    st.image("first.jpg", caption="🌾 Welcome to SMC STORES", use_container_width=True)
+    st.image("first.jpg", caption="🌾Welcome to SMC STORE🌾", use_container_width=True)
 
     st.markdown("""
-    Welcome to **SMC STORE** 🌱  
+    Welcome to 🌱**SMC STORE** 🌱  
     An initiative by **St. Mary’s College (Autonomous), Thoothukudi – Department of Botany**.  
 
     Our store proudly offers **eco-friendly, organic, and herbal products** crafted with care and scientific expertise by our Botany students. 🌿 
@@ -281,8 +283,7 @@ elif st.session_state.page == "store":
         st.session_state.page = "products"
         st.rerun()
 
-# ---- PRODUCTS PAGE ----
-# ---- PRODUCTS PAGE ----
+
 # ---- PRODUCTS PAGE ----
 elif st.session_state.page == "products":
     st.header("🛒 Products")
