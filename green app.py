@@ -235,7 +235,6 @@ if "admin_logged" not in st.session_state: st.session_state.admin_logged = False
 # ---- LOGIN PAGE ----
 if st.session_state.page == "login":
     st.title("🌱 Welcome to SMC STORE🌱")
-    st_lottie(login_anim, height=200)
     st.subheader("🔑 Sign In")
     email = st.text_input("Enter Email")
     password = st.text_input("Enter Password", type="password")
@@ -298,7 +297,7 @@ elif st.session_state.page == "store":
     """)
 
     st.image("fourth.jpg", caption="🌾 Freshness Guaranteed", use_container_width=True)
-    st_lottie(store_anim, height=250)
+
 
     if st.button("View Products"):
         st.session_state.page = "products"
