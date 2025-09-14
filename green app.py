@@ -232,7 +232,7 @@ if st.session_state.page == "login":
 
 # ---- STORE PAGE ----
 elif st.session_state.page == "store":
-    st.image("first.jpg", caption="🌾Welcome to SMC STORE🌾",  width=400)
+    st.image("first.jpg", caption="🌾Welcome to SMC STORE🌾", use_container_width=True )
 
     st.markdown("""
     Welcome to 🌱**SMC STORE** 🌱  
