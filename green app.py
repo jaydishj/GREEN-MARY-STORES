@@ -127,9 +127,9 @@ header p {
 <!-- Header Section -->
 <header>
     <h1>SMC STORE</h1>
-    <p>BY</p>
-    <p>DEPARTMENT OF BOTANY,</p> 
-    <p>ST. MARY'S COLLEGE (TUTICORIN)</p>
+    <p>BY,</p>
+    <p>DEPARTMENT OF BOTANY</p> 
+    <p>ST. MARY'S COLLEGE (THOOTHUKUDI)</p>
 </header>
 
 <!-- Products Section -->
@@ -265,14 +265,14 @@ elif st.session_state.page == "store":
     col1, col2 = st.columns([1, 2])
     with col1:
         st.image("third.jpg", use_container_width=True)
-    with col2:
-        st.write("""
-        🌱 **Our Promise:**  
-        Every product is made with natural ingredients, ensuring **purity, freshness, and eco-friendliness**.  
-        """)
+   
+    st.markdown("""
+    🌱 **Our Promise:** 🌱 
+    Every product is made with natural ingredients, ensuring **purity, freshness, and eco-friendliness**.  
+    """)
 
     st.markdown("""
-    ## 🌿 Our Mission  
+    ## 🌿 Our Mission  🌿
     To bring nature closer to people by providing sustainable herbal solutions while empowering students and farmers.  
     """)
 
