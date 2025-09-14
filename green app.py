@@ -10,15 +10,15 @@ import os
 page_bg = """
 <style>
 [data-testid="stAppViewContainer"] {
-    background-color: #f0f8ff; /* light blue background */
+    background-color: #FFD700; /* golden */
 }
 
 [data-testid="stHeader"] {
-    background-color: rgba(0,0,0,0); /* remove top header background */
+    background-color: rgba(0,0,0,0); /* transparent top bar */
 }
 
 [data-testid="stSidebar"] {
-    background-color: #e6ffe6; /* light green sidebar */
+    background-color: #FFF8DC; /* light golden for sidebar */
 }
 </style>
 """
