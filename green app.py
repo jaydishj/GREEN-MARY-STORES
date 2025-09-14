@@ -244,7 +244,7 @@ elif st.session_state.page == "store":
     st.image("second.jpg", caption="Department of Botany", use_container_width=False)
 
     st.markdown("""
-    ✨ **Why Choose Us?**  
+    ## ✨ Why Choose Us?
     - 100% Natural and Sustainable Products 🍃  
     - Promoting Student Innovation and Entrepreneurship 🎓  
     - Supporting Local Farmers and Communities 👨‍🌾👩‍🌾  
