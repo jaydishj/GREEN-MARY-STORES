@@ -10,19 +10,28 @@ import os
 page_bg = """
 <style>
 [data-testid="stAppViewContainer"] {
-    background-color: #FFD700; /* golden */
+    background: linear-gradient(270deg, #FFD700, #FFA500, #FFD700);
+    background-size: 600% 600%;
+    animation: goldAnimation 15s ease infinite;
+}
+
+@keyframes goldAnimation {
+    0% {background-position:0% 50%}
+    50% {background-position:100% 50%}
+    100% {background-position:0% 50%}
 }
 
 [data-testid="stHeader"] {
-    background-color: rgba(0,0,0,0); /* transparent top bar */
+    background-color: rgba(0,0,0,0);
 }
 
 [data-testid="stSidebar"] {
-    background-color: #FFF8DC; /* light golden for sidebar */
+    background: linear-gradient(180deg, #FFF8DC, #FFD700);
 }
 </style>
 """
 st.markdown(page_bg, unsafe_allow_html=True)
+
 # Create 2 equal columns
 col1, col2, col3, col4 = st.columns([1,2,2,1])
 
