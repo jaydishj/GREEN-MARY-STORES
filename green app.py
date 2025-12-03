@@ -60,6 +60,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+st.markdown(
+    """
+    <div style="text-align: center;">
+        <img src="second.jpg" style="width:70%; border-radius: 15px;">
+        <p style="font-size:20px; margin-top:10px;">Department of Botany</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 
 html_code = """
 <!DOCTYPE html>
