@@ -147,7 +147,9 @@ header p {
     <h1>SMC STORE</h1>
     <p>BY,</p>
     <p>DEPARTMENT OF BOTANY</p> 
-    <p>ST. MARY'S COLLEGE (THOOTHUKUDI)</p>
+    <p>ST. MARY'S COLLEGE (AUTONOMOUS)</p>
+    <p>RE-ACCREDITED WITH 'A' GRADE BY NAAC</p>
+    <p>THOOTHUKUDI, TAMILNADU, INDIA</p>
 </header>
 
 <!-- Products Section -->
