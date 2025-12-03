@@ -60,7 +60,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
--------------
+
 html_code = """
 <!DOCTYPE html>
 <html lang="en">
