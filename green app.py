@@ -88,7 +88,7 @@ header h1 {
 }
 header p {
     font-size: 1.1rem;
-    color: #fff;
+    color: FFD701;
     margin-bottom: 20px;
 }
 /* Product grid */
@@ -115,7 +115,7 @@ header p {
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 .card h3 {
-    color: #FFD701;
+    color: FFD701;
     margin: 10px 0;
 }
 .card p {
@@ -130,7 +130,7 @@ header p {
     border: none;
     border-radius: 25px;
     background: linear-gradient(45deg, #FFD700, #FFB800);
-    color: #8B0000;
+    color: FFD701;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
