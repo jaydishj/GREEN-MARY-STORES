@@ -35,24 +35,32 @@ with col2:
     st.image("images.png", caption="SMC COLLEGE", width=200)
 
 st.markdown("""
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
         * {
             font-family: 'Roboto', sans-serif;
         }
-        .big-text {
-            font-size: 50px !important;
-            font-weight: 3000;
+
+        .title-big {
+            font-size: 45px !important;
+            font-weight: 700;
+            line-height: 1.3;
         }
-        .medium-text {
-            font-size: 50px !important;
+
+        .subtitle-big {
+            font-size: 30px !important;
+            font-weight: 600;
+        }
+
+        .body-big {
+            font-size: 24px !important;
+            font-weight: 400;
         }
     </style>
-""", unsafe_allow_html=True)
+""", unsafe_allow_html=True)-----
 
-
-# ------------------ HTML + CSS ------------------
+-------------
 html_code = """
 <!DOCTYPE html>
 <html lang="en">
