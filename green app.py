@@ -285,7 +285,7 @@ elif st.session_state.page == "store":
     """)
 
     
-    st.image("second.jpg" style="width:70%; border-radius: 15px; , caption="Department of Botany", use_container_width=False)
+    st.image("second.jpg" , caption="Department of Botany", use_container_width=False)
 
     st.markdown("""
     ## ✨ Why Choose Us?
