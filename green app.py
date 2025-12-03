@@ -43,7 +43,7 @@ st.markdown("""
         }
         .big-text {
             font-size: 32px !important;
-            font-weight: 700;
+            font-weight: 1000;
         }
         .medium-text {
             font-size: 32px !important;
