@@ -337,6 +337,11 @@ elif st.session_state.page == "products":
             "name": "Rose petal jam",
             "price": 85,
             "images": [ "SIX.jpg"]
+        },
+        {
+            "name": "Mushroom",
+            "price": 70,
+            "images": [ "TRI.jpg"]
         }
     ]
 
