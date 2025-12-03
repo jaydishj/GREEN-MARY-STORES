@@ -29,7 +29,7 @@ page_bg = """
 st.markdown(page_bg, unsafe_allow_html=True)
 
 # Create 2 equal columns
-col1, col2, col4 = st.columns([1,2,2,1])
+col1, col2, = st.columns([1,2])
 
 with col2:
     st.image("images.png", caption="SMC COLLEGE", width=120)
