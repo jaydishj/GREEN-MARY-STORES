@@ -221,6 +221,17 @@ def load_lottieurl(url: str):
     if r.status_code != 200:
         return None
     return r.json()
+
+login_anim = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json")
+store_anim = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_t24tpvcu.json")
+success_anim = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_jbrw3hcz.json")
+
+# ------------------ SESSION ------------------
+if "page" not in st.session_state: st.session_state.page = "login"
+if "cart" not in st.session_state: st.session_state.cart = []
+if "admin_logged" not in st.session_state: st.session_state.admin_logged = False
+
+# ---- LOGIN PAGE ----
 if st.session_state.page == "login":
     st.title("🌱 Welcome to SMC STORE🌱")
     st.subheader("🔑 Sign In")
@@ -236,17 +247,6 @@ if st.session_state.page == "login":
             st.rerun()
         else:
             st.error("⚠️ Please enter both Email and Password.")
-login_anim = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json")
-store_anim = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_t24tpvcu.json")
-success_anim = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_jbrw3hcz.json")
-
-# ------------------ SESSION ------------------
-if "page" not in st.session_state: st.session_state.page = "login"
-if "cart" not in st.session_state: st.session_state.cart = []
-if "admin_logged" not in st.session_state: st.session_state.admin_logged = False
-
-# ---- LOGIN PAGE ----
-
 # ---- STORE PAGE ----
 elif st.session_state.page == "store":
     st.image("first.jpg", caption="🌾Welcome to SMC STORE🌾", use_container_width=True )
