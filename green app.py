@@ -35,7 +35,7 @@ with col2:
     st.image("images.png", caption="SMC COLLEGE", width=200)
 
 st.markdown("""
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;600;800&display=swap" rel="stylesheet">
 
     <style>
         * {
