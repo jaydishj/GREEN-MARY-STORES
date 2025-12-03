@@ -42,7 +42,7 @@ st.markdown("""
             font-family: 'Roboto', sans-serif;
         }
         .big-text {
-            font-size: 28px !important;
+            font-size: 32px !important;
             font-weight: 700;
         }
         .medium-text {
