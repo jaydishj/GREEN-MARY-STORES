@@ -179,7 +179,7 @@ header p {
 </html>
 """
 
-components.html(html_code, height=800, scrolling=True)
+components.html(html_code, height=800, )
 # ------------------ DATABASE ------------------
 DB_FILE = "orders.db"
 
