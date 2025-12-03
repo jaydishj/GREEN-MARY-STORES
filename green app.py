@@ -58,7 +58,7 @@ body::before {
     width: 100%;
     height: 100%;
     background: linear-gradient(-45deg, #8B0000, #B22222, #FFD700, #8B0000);
-    background-size: 400% 100%;
+    background-size: 400% 50%;
     animation: gradientBG 12s ease infinite;
     z-index: -1;
 }
