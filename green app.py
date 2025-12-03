@@ -82,7 +82,7 @@ header {
 header h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #FFD700;
+    color: #FFD701;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
     margin: 10px 0;
 }
@@ -115,7 +115,7 @@ header p {
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 .card h3 {
-    color: #FFD700;
+    color: #FFD701;
     margin: 10px 0;
 }
 .card p {
