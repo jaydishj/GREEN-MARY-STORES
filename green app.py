@@ -46,7 +46,7 @@ st.markdown("""
             font-weight: 700;
         }
         .medium-text {
-            font-size: 20px !important;
+            font-size: 32px !important;
         }
     </style>
 """, unsafe_allow_html=True)
