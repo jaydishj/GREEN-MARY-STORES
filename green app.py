@@ -283,17 +283,9 @@ elif st.session_state.page == "store":
 
     Our store proudly offers **eco-friendly, organic, and herbal products** crafted with care and scientific expertise by our Botany students. 🌿 
     """)
-    st.markdown(
-    """
-    <div style="text-align: center;">
-        <img src="second.jpg" style="width:70%; border-radius: 15px;">
-        <p style="font-size:20px; margin-top:10px;">Department of Botany</p>
-    </div>
-    """,
-    unsafe_allow_html=True
-    )
+
     
-    st.image("second.jpg", caption="Department of Botany", use_container_width=False)
+    st.image("second.jpg" style="width:70%; border-radius: 15px; , caption="Department of Botany", use_container_width=False)
 
     st.markdown("""
     ## ✨ Why Choose Us?
