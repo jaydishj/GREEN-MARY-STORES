@@ -34,6 +34,23 @@ col1, col2, = st.columns([1,2])
 with col2:
     st.image("images.png", caption="SMC COLLEGE", width=200)
 
+st.markdown("""
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+        .big-text {
+            font-size: 28px !important;
+            font-weight: 700;
+        }
+        .medium-text {
+            font-size: 20px !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 
 # ------------------ HTML + CSS ------------------
 html_code = """
