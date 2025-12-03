@@ -32,7 +32,7 @@ st.markdown(page_bg, unsafe_allow_html=True)
 col1, col2, = st.columns([1,2])
 
 with col2:
-    st.image("images.png", caption="SMC COLLEGE", width=120)
+    st.image("images.png", caption="SMC COLLEGE", width=130)
 
 
 # ------------------ HTML + CSS ------------------
