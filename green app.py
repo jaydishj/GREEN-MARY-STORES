@@ -42,11 +42,11 @@ st.markdown("""
             font-family: 'Roboto', sans-serif;
         }
         .big-text {
-            font-size: 32px !important;
+            font-size: 50px !important;
             font-weight: 1000;
         }
         .medium-text {
-            font-size: 32px !important;
+            font-size: 50px !important;
         }
     </style>
 """, unsafe_allow_html=True)
