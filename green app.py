@@ -11,14 +11,13 @@ import os
 import streamlit as st
 
 # Hide Streamlit Style (footer, menu, profile name)
-hide_elements = """
+
+st.markdown("""
 <style>
-#MainMenu {visibility: hidden;} 
-header {visibility: hidden;} 
-footer {visibility: hidden;}
+[data-testid="stToolbar"] {display: none !important;}
 </style>
-"""
-st.markdown(hide_elements, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
+
 
 
 page_bg = """
