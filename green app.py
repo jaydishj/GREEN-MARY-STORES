@@ -215,8 +215,238 @@ header p {
 </body>
 </html>
 """
+st.markdown("""
+<style>
+/* Increase only main app title */
+h1 {
+    font-size: 45px !important;
+    font-weight: 800;
+    color: #1b5e20;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px !important;
+    }
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+
+/* ---------------- App Background ---------------- */
+.stApp {
+    background: linear-gradient(139deg, #f6fff8, #e8f5e9);
+    color: #1b5e20;   /* Default text color */
+}
+
+/* ---------------- All Text Green ---------------- */
+body, p, span, div, label {
+    color: #1b5e20 !important;
+}
+
+/* ---------------- Titles ---------------- */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: #1b5e20 !important;
+    font-weight: 700;
+}
+
+/* ---------------- Buttons ---------------- */
+.stButton > button {
+    width: 100%;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #2e7d32, #66bb6a);
+    color: white !important;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0.7em;
+    border: none;
+}
+
+/* ---------------- Upload Box ---------------- */
+[data-testid="stFileUploader"] {
+    border: 2px dashed #2e7d32;
+    border-radius: 16px;
+    padding: 1em;
+    background-color: #f1f8e9;
+}
+
+/* ---------------- File uploader text ---------------- */
+[data-testid="stFileUploader"] * {
+    color: #1b5e20 !important;
+}
+
+/* ---------------- Images ---------------- */
+img {
+    border-radius: 16px;
+    max-width: 100%;
+}
+
+/* ---------------- Card Sections ---------------- */
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    color: #1b5e20;
+}
+
+/* ---------------- Footer ---------------- */
+.footer {
+    text-align: center;
+    font-size: 13px;
+    color: #2e7d32 !important;
+    margin-top: 30px;
+}
+
+/* =================================================
+   📱 Mobile Responsive Styling
+   ================================================= */
+@media (max-width: 768px) {
+
+    h1 { font-size: 26px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: 18px; }
+
+    .stButton > button {
+        font-size: 16px;
+        padding: 0.6em;
+        border-radius: 12px;
+    }
+
+    .card {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+}
+
+</style>
+""", unsafe_allow_html=True)
 
 components.html(html_code, height=800, )
+st.markdown("""
+<style>
+/* Increase only main app title */
+h1 {
+    font-size: 45px !important;
+    font-weight: 800;
+    color: #1b5e20;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px !important;
+    }
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+
+/* ---------------- App Background ---------------- */
+.stApp {
+    background: linear-gradient(139deg, #f6fff8, #e8f5e9);
+    color: #1b5e20;   /* Default text color */
+}
+
+/* ---------------- All Text Green ---------------- */
+body, p, span, div, label {
+    color: #1b5e20 !important;
+}
+
+/* ---------------- Titles ---------------- */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: #1b5e20 !important;
+    font-weight: 700;
+}
+
+/* ---------------- Buttons ---------------- */
+.stButton > button {
+    width: 100%;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #2e7d32, #66bb6a);
+    color: white !important;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0.7em;
+    border: none;
+}
+
+/* ---------------- Upload Box ---------------- */
+[data-testid="stFileUploader"] {
+    border: 2px dashed #2e7d32;
+    border-radius: 16px;
+    padding: 1em;
+    background-color: #f1f8e9;
+}
+
+/* ---------------- File uploader text ---------------- */
+[data-testid="stFileUploader"] * {
+    color: #1b5e20 !important;
+}
+
+/* ---------------- Images ---------------- */
+img {
+    border-radius: 16px;
+    max-width: 100%;
+}
+
+/* ---------------- Card Sections ---------------- */
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    color: #1b5e20;
+}
+
+/* ---------------- Footer ---------------- */
+.footer {
+    text-align: center;
+    font-size: 13px;
+    color: #2e7d32 !important;
+    margin-top: 30px;
+}
+
+/* =================================================
+   📱 Mobile Responsive Styling
+   ================================================= */
+@media (max-width: 768px) {
+
+    h1 { font-size: 26px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: 18px; }
+
+    .stButton > button {
+        font-size: 16px;
+        padding: 0.6em;
+        border-radius: 12px;
+    }
+
+    .card {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+}
+
+</style>
+""", unsafe_allow_html=True)
 # ------------------ DATABASE ------------------
 DB_FILE = "orders.db"
 
